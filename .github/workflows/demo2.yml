@@ -7,3 +7,11 @@ jobs:
         steps:
         - name: Create a text file
           run: echo "hello, world" > hello.txt
+    
+    test: 
+        runs-on: ubuntu-latest
+        steps:
+        - name: list file
+          run: ls -l
+        - name: test file
+          run: cat hello.txt |grep -i "hello"
