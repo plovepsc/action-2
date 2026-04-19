@@ -12,7 +12,7 @@ jobs:
         - name: execute cowsay
           run: cowsay -f dragon "Hello, World!" >> dragon.txt
         - name: Sleep for 30 seconds
-          run: seleep 30
+          run: sleep 30
     
     test_jobs_2: 
         runs-on: ubuntu-latest
