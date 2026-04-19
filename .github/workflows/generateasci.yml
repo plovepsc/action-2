@@ -11,12 +11,30 @@ jobs:
           run: sudo apt-get install cowsay -y
         - name: execute cowsay
           run: cowsay -f dragon "Hello, World!" >> dragon.txt
-        - name: test file exit
+        - name: Sleep for 30 seconds
+          run: seleep 30
+    
+    test_jobs_2: 
+        runs-on: ubuntu-latest
+        steps:
+        - name: sleeep 10 seconds
+          run: sleep 10
+        - name: Test file Exists
           run: grep -i "dragon" dragon.txt
 
-        - name: read file
+
+    deploy_job_3:
+        runs-on: ubuntu-latest
+        steps: 
+        - name: Read file
           run: cat dragon.txt
-        - name: list repo file
-          run: ls -ltra
+
+        - name: Deploy
+          run: Echo Deploying ---------
+        
+        
+
+
+  
 
     
