@@ -7,10 +7,13 @@ jobs:
         steps:
         - name: Checkout repository
           uses: actions/checkout@v4
-        - name: Welcome message
-          run: echo "Welcome to GitHub Actions"
-        - name: list files
-          run: ls -l
-        - name: readme file
-          run: cat README.md
+
+        - name: List and read files
+          run: |
+            echo "Listing files in the repository:"
+            ls -ltra
+            cat README.md
+        - name: Generate Asci artwork
+          run: cowsay -f dragon "Hello, World!" >> dragon.txt
+      
         
