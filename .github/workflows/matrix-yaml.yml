@@ -1,0 +1,15 @@
+name: This is a matrix yaml file
+on:
+  workflow_dispatch: # Runs manually
+jobs:
+    display:
+        strategy:
+            matrix:
+                os: [ubuntu-latest, windows-latest, ubuntu-22.04]
+                image: [nginx:latest, httpd:latest]
+        runs-on: ${{ matrix.os }}
+        steps:
+        - name: Echo Docker Details
+          run: docker info
+        - name: Run image on ${{ matrix.os }}
+          run: dockr run ${{ matrix.image }}:latest
